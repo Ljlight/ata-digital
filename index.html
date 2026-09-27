@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documento Digital</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00938E">
+</head>
+
+<body>
+
+    <!-- =========================
+         TELA DE LOGIN
+         ========================= -->
+
+    <div class="login-container">
+
+        <img
+            src="logo-light.png"
+            alt="Light - Prontos e Energizados"
+            class="logo-light"
+        >
+
+        <h1>Autorização de Trabalho e Acesso</h1>
+
+
+        <div class="campo">
+
+            <label for="matricula">
+                Matrícula
+            </label>
+
+            <input
+                type="text"
+                id="matricula"
+                placeholder="Digite sua matrícula"
+            >
+
+        </div>
+
+
+        <div class="campo">
+
+            <label for="senha">
+                Senha
+            </label>
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha"
+            >
+
+        </div>
+
+
+        <button onclick="entrar()">
+            ENTRAR
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         TELA DO DOCUMENTO
+         ========================= -->
+
+    <div
+        class="documento-container"
+        style="display: none;"
+    >
+
+        <h3 class="nome-colaborador"></h3>
+
+        <h2>
+            Autorização de Trabalho e Acesso
+        </h2>
+
+
+        <img
+            src="frente.png"
+            alt="Frente da Autorização de Trabalho e Acesso"
+            class="documento-imagem"
+        >
+
+
+        <button onclick="verVerso()">
+            VER VERSO
+        </button>
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           CADASTRO DOS COLABORADORES
+           ========================= */
+
+        const colaboradores = {
+
+            "10001": {
+                nome: "Luciano Jesus",
+                senha: "1234"
+            },
+
+            "10002": {
+                nome: "Pedro Borba",
+                senha: "1234"
+            },
+
+            "10003": {
+                nome: "Thiago Alves",
+                senha: "1234"
+            },
+
+            "10004": {
+                nome: "Wagner Rangel",
+                senha: "1234"
+            },
+
+            "10005": {
+                nome: "Leonardo Coutinho",
+                senha: "1234"
+            }
+
+        };
+
+
+        /* =========================
+           COLABORADOR LOGADO
+           ========================= */
+
+        let colaboradorLogado = null;
+
+
+        /* =========================
+           FUNÇÃO ENTRAR
+           ========================= */
+
+        function entrar() {
+
+            const matricula =
+                document
+                    .getElementById("matricula")
+                    .value
+                    .trim();
+
+
+            const senha =
+                document
+                    .getElementById("senha")
+                    .value
+                    .trim();
+
+
+            const colaborador =
+                colaboradores[matricula];
+
+
+            if (
+                colaborador &&
+                colaborador.senha === senha
+            ) {
+
+                colaboradorLogado = colaborador;
+
+
+                document
+                    .querySelector(".login-container")
+                    .style.display = "none";
+
+
+                document
+                    .querySelector(".documento-container")
+                    .style.display = "block";
+
+
+                document
+                    .querySelector(".nome-colaborador")
+                    .textContent =
+                        "Olá, " + colaborador.nome;
+
+            } else {
+
+                alert(
+                    "Matrícula ou senha inválida."
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           VER VERSO
+           ========================= */
+
+        function verVerso() {
+
+            document
+                .querySelector(".documento-container")
+                .innerHTML = `
+
+                    <h3 class="nome-colaborador">
+                        Olá, ${colaboradorLogado.nome}
+                    </h3>
+
+                    <h2>
+                        Autorização de Trabalho e Acesso
+                    </h2>
+
+                    <img
+                        src="verso.png"
+                        alt="Verso da Autorização de Trabalho e Acesso"
+                        class="documento-imagem"
+                    >
+
+                    <button onclick="voltarFrente()">
+                        VOLTAR
+                    </button>
+
+                `;
+        }
+
+
+        /* =========================
+           VOLTAR PARA FRENTE
+           ========================= */
+
+        function voltarFrente() {
+
+            document
+                .querySelector(".documento-container")
+                .innerHTML = `
+
+                    <h3 class="nome-colaborador">
+                        Olá, ${colaboradorLogado.nome}
+                    </h3>
+
+                    <h2>
+                        Autorização de Trabalho e Acesso
+                    </h2>
+
+                    <img
+                        src="frente.png"
+                        alt="Frente da Autorização de Trabalho e Acesso"
+                        class="documento-imagem"
+                    >
+
+                    <button onclick="verVerso()">
+                        VER VERSO
+                    </button>
+
+                `;
+        }
+
+    </script>
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("./service-worker.js")
+                .then(() => {
+                    console.log("Service Worker registrado com sucesso.");
+                })
+                .catch((erro) => {
+                    console.error("Erro ao registrar o Service Worker:", erro);
+                });
+        });
+    }
+</script>
+
+</body>
+
+</html>

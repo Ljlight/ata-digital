@@ -1,0 +1,414 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("rio-mobile.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   LOGIN
+   ========================= */
+
+.login-container {
+    width: 100%;
+    max-width: 390px;
+
+    background: transparent;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   TÍTULO
+   ========================= */
+
+h1 {
+    color: white;
+
+    font-size: 29px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================
+   CAMPOS
+   ========================= */
+
+.campo {
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.campo input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(6px);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.campo input::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.campo input:focus {
+    border-color: white;
+
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================
+   BOTÃO
+   ========================= */
+
+button {
+    width: 100%;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #00938E;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.35);
+
+    margin-top: 5px;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   AVISO
+   ========================= */
+
+.aviso {
+    margin-top: 18px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================
+   LOGO
+   ========================= */
+
+.logo-light {
+    width: 100%;
+
+    max-width: 330px;
+
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto 25px;
+
+    filter:
+        drop-shadow(
+            0 3px 8px rgba(0, 0, 0, 0.45)
+        );
+}
+
+
+/* =========================
+   TELA DO DOCUMENTO
+   ========================= */
+
+.documento-container {
+    width: 100%;
+
+    max-width: 560px;
+
+    text-align: center;
+
+    background: transparent;
+
+    padding: 0;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    backdrop-filter: none;
+}
+
+
+/* =========================
+   NOME DO COLABORADOR
+   ========================= */
+
+.nome-colaborador {
+    color: white;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    margin: 0 0 4px;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================
+   TÍTULO DO DOCUMENTO
+   ========================= */
+
+.documento-container h2 {
+    color: white;
+
+    font-size: 23px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    margin: 0 0 8px;
+
+    text-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+
+/* =========================
+   AVISO
+   ========================= */
+
+.documento-aviso {
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 9px;
+
+    line-height: 1.3;
+
+    margin-bottom: 7px;
+
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================
+   IMAGEM
+   ========================= */
+
+.documento-imagem {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 72vh;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.35);
+
+    margin: 0 auto 9px;
+}
+
+
+/* =========================
+   BOTÃO DO DOCUMENTO
+   ========================= */
+
+.documento-container button {
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background: #00938E;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(0, 147, 142, 0.45);
+}
+
+.documento-container button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   CELULAR
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 18px;
+
+        background-attachment: scroll;
+
+        background-position: center center;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .campo input {
+        height: 50px;
+    }
+
+    button {
+        height: 52px;
+    }
+
+
+    /* DOCUMENTO NO CELULAR */
+
+    .documento-container {
+        width: 100%;
+
+        max-width: none;
+
+        padding: 0;
+
+        margin: 0;
+    }
+
+    .nome-colaborador {
+        font-size: 25px;
+
+        margin-bottom: 4px;
+    }
+
+    .documento-container h2 {
+        font-size: 17px;
+
+        margin-bottom: 7px;
+    }
+
+    .documento-aviso {
+        font-size: 8px;
+
+        margin-bottom: 7px;
+    }
+
+    .documento-imagem {
+        width: 100%;
+
+        max-height: 73vh;
+
+        margin-bottom: 9px;
+    }
+
+    .documento-container button {
+        height: 48px;
+
+        font-size: 14px;
+    }
+}

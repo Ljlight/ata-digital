@@ -1,0 +1,23 @@
+{
+    "name": "Autorização de Trabalho e Acesso",
+    "short_name": "ATA Digital",
+    "description": "Aplicativo para consulta da Autorização de Trabalho e Acesso.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#00938E",
+    "theme_color": "#00938E",
+    "orientation": "portrait",
+
+    "icons": [
+        {
+            "src": "ATA-icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "ATA-icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
