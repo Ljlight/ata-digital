@@ -1,4 +1,4 @@
-const CACHE_NAME = "ata-digital-v1";
+const CACHE_NAME = "ata-digital-v2";
 
 const ARQUIVOS = [
     "./",
